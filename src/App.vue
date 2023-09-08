@@ -18,7 +18,7 @@
 		</div>
 
 		<div v-if="status === 'gaming'" class="height-100 d-flex justify-content-center align-items-center">
-			<Game :size="size" @stop-game="stopGame"/>
+			<Game :size="size" @stop-game="stopGame" @play-again="playAgain"/>
 		</div>
 
 		<div v-if="status === 'stopping'" class="height-100 d-flex justify-content-center align-items-center">
@@ -56,7 +56,7 @@ export default {
 			}
 		},
 		playAgain () {
-			this.status = 'gaming';
+			this.status = 'beginning';
 		}
 	}
 }
