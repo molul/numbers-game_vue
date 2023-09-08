@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { formatTime } from "../helper"
+import { formatTime } from "../functions"
 export default {
 	name: 'TimeComponent',
 	props: ['time'],

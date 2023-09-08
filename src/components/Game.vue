@@ -1,26 +1,22 @@
 <template>
-	<div class="text-left">
+	<div class="text-left p-4 rounded-lg bg-slate-300">
 		<div class="mb-3">
 			<Time :time="time"/>
 		</div>
 
-		<div>
-			<table>
-				<tbody>
-					<tr v-for="(i, row) in board" :key="i">
-						<td v-for="(j, col) in i" :key="j" @click="swapBoard(row, col)">
+		<div class="relative shadow-md shadow-slate-500/50 max-w-lg rounded-md bg-slate-300 mx-auto space-y-2 p-4 sm:p-6">
+					<div class="max-w-lg flex items-center justify-center space-x-1" v-for="(i, row) in board" :key="i">
+						<div class=" text-white text-2xl font-bold inline-block w-20 aspect-square rounded sm:rounded-md flex items-center justify-center bg-slate-400 shadow-lg" v-for="(j, col) in i" :key="j" @click="swapBoard(row, col)">
 							{{ j }}
-						</td>
-					</tr>
-				</tbody>
-			</table>
+						</div>
+					</div>
 		</div>
 	</div>
 </template>
 
 <script>
 import Time from './Time.vue';
-import { createBoard, mixBoard, isSwappable, getSwappableIndexes, swap, isCorrectBoard } from '../helper';
+import { createBoard, mixBoard, isSwappable, getSwappableIndexes, swap, isCorrectBoard } from '../functions';
 
 export default {
 	name: 'GameComponent',
