@@ -1,31 +1,31 @@
 <template>
-	<h2>{{ sec }}:{{ msec }}</h2>
+  <h2>{{ sec }}:{{ msec }}</h2>
 </template>
 
 <script>
-import { formatTime } from "../functions"
+import { formatTime } from "../functions";
 export default {
-	name: 'TimeComponent',
-	props: ['time'],
-	data() {
-		return {
-			sec: 0,
-			msec: 0,
-		}
-	},
-	created() {
-		const time = formatTime(this.time);
-		this.sec = time.sec;
-		this.msec = time.msec;
-	},
-	watch: {
-		time: function (newTime) {
-			const time = formatTime(newTime);
-			this.sec = time.sec;
-			this.msec = time.msec;
-		}
-	}
-}
+  name: "TimeComponent",
+  props: ["time"],
+  data() {
+    return {
+      sec: 0,
+      msec: 0,
+    };
+  },
+  created() {
+    const time = formatTime(this.time);
+    this.sec = time.sec;
+    this.msec = time.msec;
+  },
+  watch: {
+    time: function (newTime) {
+      const time = formatTime(newTime);
+      this.sec = time.sec;
+      this.msec = time.msec;
+    },
+  },
+};
 </script>
 
 <style>
