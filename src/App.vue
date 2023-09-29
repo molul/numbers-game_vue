@@ -1,18 +1,7 @@
 <template>
   <div class="text-center max-w-lg mx-auto bg-slate-700 min-h-screen p-2">
     <!-- Title -->
-    <div
-      class="p-4 mt-2 mb-4 rounded-md bg-slate-500 mx-auto shadow-md shadow-slate-800/50 text-left"
-    >
-      <div
-        class="text-xl sm:text-3xl font-bold text-white flex justify-left items-center gap-4"
-      >
-        <div class="w-10">
-          <img src="/vue.png" alt="angular_icon" />
-        </div>
-        <div>NUMBERS PUZZLE GAME</div>
-      </div>
-    </div>
+    <Header />
 
     <div v-if="status === 'beginning'">
       <Start @start-game="startGame" />
@@ -31,17 +20,21 @@
     >
       <PlayAgain :score="score" :record="record" @play-again="playAgain" />
     </div>
+
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import Start from "./components/Start.vue";
 import Game from "./components/Game.vue";
 import PlayAgain from "./components/PlayAgain.vue";
 
 export default {
   name: "AppComponent",
-  components: { Start, Game, PlayAgain },
+  components: { Header, Footer, Start, Game, PlayAgain },
   data() {
     return {
       size: 3,
