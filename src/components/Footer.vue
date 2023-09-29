@@ -4,7 +4,7 @@
   >
     <div class="text-sm md:text-base text-white text-center">
       Developed by
-      <a href="https://www.luismorcilloluque.com/es" target="_blank"
+      <a href="https://www.luismorcilloluque.com/en" target="_blank"
         ><span class="font-bold">Luis Morcillo</span></a
       >
       with Vue &copy; 2023
